@@ -1,0 +1,21 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://bordalo.observador.pt/v2/q:70/rs:fill:2560:1439/c:2560:1439:nowe:0:101/plain/https://s3.observador.pt/wp-content/uploads/2015/08/22100054/GettyImages-108387402-scaled.jpg);">
+  <div class="container">
+    <h1>LISTS OF MOVIES WITH BOOKMARKS AND LISTS AND MOVIES</h1>
+    <p>yep, we do lists. we think...</p>
+  </div>
+</div>
+
+
+
+<h3 class="p-3 text-center">My lists</h3>
+
+<% @lists.each do |list| %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://conwayyao.com/wp-content/uploads/2015/07/Cinema_Banner.jpeg)">
+    <%= link_to list.name, list_path(list.id)  %>
+  </div>
+<% end %>
+
+
+<div class="text-center">
+  <%= link_to "Create a movie list", new_list_path, class: "btn btn-gradient" %>
+</div>
