@@ -10,7 +10,8 @@
 <h3 class="p-3 text-center">My lists</h3>
 
 <% @lists.each do |list| %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://conwayyao.com/wp-content/uploads/2015/07/Cinema_Banner.jpeg)">
+  <% url = list.photo.attached? ? cl_image_path(list.photo.key) : "https://conwayyao.com/wp-content/uploads/2015/07/Cinema_Banner.jpeg" %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= url %>)">
     <%= link_to list.name, list_path(list.id)  %>
   </div>
 <% end %>
@@ -19,5 +20,3 @@
 <div class="text-center">
   <%= link_to "Create a movie list", new_list_path, class: "btn btn-gradient" %>
 </div>
-
-<%= cl_image_tag("vowfwikarisugsfb0xtj", width: 400, height: 300, crop: :fill) %>
