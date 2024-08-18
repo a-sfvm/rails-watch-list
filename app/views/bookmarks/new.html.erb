@@ -1,8 +1,8 @@
 <div class="card-category-new-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://conwayyao.com/wp-content/uploads/2015/07/Cinema_Banner.jpeg)">
   <p>
   <%= simple_form_for [@list, @bookmark] do |f| %>
-    <%= f.input :comment %>
     <%= f.association :movie %>
+    <%= f.input :comment %>
     <%= f.submit class: "btn btn-gradient"%>
   <% end %>
   </p>
